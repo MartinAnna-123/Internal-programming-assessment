@@ -11,27 +11,26 @@ console.log('guess higher or lower than: ' + card[random])
 const random2 = Math.floor(Math.random() * card2.length);
 
 // ask the user to guess higher or lower
-guess = prompt('enter guess')
+
 // console.log('the card you drew is:' + card2[random2])
 let numberCard = parseInt (card[random])
 let numberCard2 = parseInt (card2[random2]) 
 // console.log(numberCard)
-// console.log(numberCard2)
 
 while (isNaN(numberCard2)){
   // console.log(card2[random2])
-  if (card2[random2] == 'ace'){
+  if (card2[random2] == 'Ace'){
     numberCard2 = 1
-  } else if (card2[random2] == 'jack'){
+  } else if (card2[random2] == 'Jack'){
     numberCard2 = 11
-  } else if (card2[random2] == 'queen'){
+  } else if (card2[random2] == 'Queen'){
     numberCard2 = 12
   } else if (card2[random2] == 'King'){
     numberCard2 = 13
   }
 } 
-// console.log(numberCard2)
-
+console.log(numberCard2)
+guess = prompt('enter guess')
 
 
 if(guess == 'h' || 'higher'){
@@ -64,4 +63,6 @@ if(guess == 'h' || 'higher'){
   console.log('invalid answer')
   play();
 }
+
+
 }
