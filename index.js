@@ -18,9 +18,19 @@ let numberCard2 = parseInt (card2[random2])
 // console.log(numberCard)
 // console.log(numberCard2)
 
-if (isNaN(numberCard2)){
-  console.log(card2[random2])
+while (isNaN(numberCard2)){
+  // console.log(card2[random2])
+  if (card2[random2] == 'ace'){
+    numberCard2 = 1
+  } else if (card2[random2] == 'jack'){
+    numberCard2 = 11
+  } else if (card2[random2] == 'queen'){
+    numberCard2 = 12
+  } else if (card2[random2] == 'King'){
+    numberCard2 = 13
+  }
 } 
+// console.log(numberCard2)
 
 
 
@@ -47,7 +57,7 @@ if(guess == 'h' || 'higher'){
     console.log('incorrect')
     console.log('your card was: ' + numberCard2)
   } else {
-    console.log('incorrect')
+    console.log('loremipsum')
     console.log('your card was: ' + numberCard2)
   }
 } else {
