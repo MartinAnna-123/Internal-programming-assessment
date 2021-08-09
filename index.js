@@ -15,7 +15,13 @@ const random2 = Math.floor(Math.random() * card2.length);
 // console.log('the card you drew is:' + card2[random2])
 let numberCard = parseInt (card[random])
 let numberCard2 = parseInt (card2[random2]) 
-console.log(numberCard + numberCard2 )
+console.log(numberCard)
+console.log(numberCard2)
+
+if (isNaN(numberCard) || isNaN(numberCard2)){
+  console.log(card2[random2])
+}
+
 }
 
 // if(guess == 'h' || 'higher'){
