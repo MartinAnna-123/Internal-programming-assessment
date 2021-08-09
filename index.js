@@ -17,7 +17,7 @@ let numberCard = parseInt (card[random])
 let numberCard2 = parseInt (card2[random2]) 
 // console.log(numberCard)
 
-while (isNaN(numberCard2)){
+if (isNaN(numberCard2)){
   // console.log(card2[random2])
   if (card2[random2] == 'Ace'){
     numberCard2 = 1
@@ -30,39 +30,40 @@ while (isNaN(numberCard2)){
   }
 } 
 console.log(numberCard2)
+
+playerGuess();
+function playerGuess(){
+
 guess = prompt('enter guess')
 
-
-if(guess == 'h' || 'higher'){
-  
-  if(numberCard < numberCard2){
+if (guess == 'h' || 'higher'){
+  higherGuess();
+  } else if (guess == 'l' || 'lower'){
+  lowerGuess();
+}
+function higherGuess(){
+  if (numberCard2 > numberCard){
     console.log('correct')
-    console.log('your card was: ' + numberCard2)
-  }
-  else if (numberCard > numberCard2){
-    console.log('incorrect')
-    console.log('your card was: ' + numberCard2)
   } else {
     console.log('incorrect')
-    console.log('your card was: ' + numberCard2)
   }
- 
-} else if (guess == 'l' || 'lower'){
-  if(numberCard > numberCard2){
+}
+function lowerGuess(){
+  if (numberCard > numberCard2){
     console.log('correct')
-    console.log('your card was: ' + numberCard2)
-  }
-  else if (numberCard < numberCard2){
-    console.log('incorrect')
-    console.log('your card was: ' + numberCard2)
   } else {
-    console.log('loremipsum')
-    console.log('your card was: ' + numberCard2)
+    console.log('incorrect')
   }
-} else {
-  console.log('invalid answer')
-  play();
+}
 }
 
 
+
+function ending(){
+  let repeat = prompt('do you want to play again?')
+  if(repeat == 'yes'){
+    play();
+  }
 }
+}
+
