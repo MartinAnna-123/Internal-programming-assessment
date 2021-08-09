@@ -11,34 +11,47 @@ console.log('guess higher or lower than: ' + card[random])
 const random2 = Math.floor(Math.random() * card2.length);
 
 // ask the user to guess higher or lower
-// guess = prompt('enter guess')
+guess = prompt('enter guess')
 // console.log('the card you drew is:' + card2[random2])
 let numberCard = parseInt (card[random])
 let numberCard2 = parseInt (card2[random2]) 
-console.log(numberCard)
-console.log(numberCard2)
+// console.log(numberCard)
+// console.log(numberCard2)
 
-if (isNaN(numberCard) || isNaN(numberCard2)){
+if (isNaN(numberCard2)){
   console.log(card2[random2])
-}
+} 
 
-}
 
-// if(guess == 'h' || 'higher'){
+
+if(guess == 'h' || 'higher'){
   
-//   if(card[random] > card2[random2]){
-//     console.log('correct')
-//   }
-//   else if (card[random] < card2[random2]){
-//     console.log('incorrect')
-//   } else {
-//     console.log('incorrect')
-//   }
+  if(numberCard < numberCard2){
+    console.log('correct')
+    console.log('your card was: ' + numberCard2)
+  }
+  else if (numberCard > numberCard2){
+    console.log('incorrect')
+    console.log('your card was: ' + numberCard2)
+  } else {
+    console.log('incorrect')
+    console.log('your card was: ' + numberCard2)
+  }
  
-// } else if (guess == 'l' || 'lower'){
-//   console.log('lorem ipsum')
-// } else {
-//   console.log('invalid answer')
-//   play();
-// }
-// }
+} else if (guess == 'l' || 'lower'){
+  if(numberCard > numberCard2){
+    console.log('correct')
+    console.log('your card was: ' + numberCard2)
+  }
+  else if (numberCard < numberCard2){
+    console.log('incorrect')
+    console.log('your card was: ' + numberCard2)
+  } else {
+    console.log('incorrect')
+    console.log('your card was: ' + numberCard2)
+  }
+} else {
+  console.log('invalid answer')
+  play();
+}
+}
