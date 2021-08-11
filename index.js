@@ -1,10 +1,14 @@
 console.log('Welcome to the high, low card game')
+console.log('You have three lives to get as many points as possible')
+console.log('Every answer you get correct you get a point')
 
 // creating the variable choice options for all the values of cards you can get
 const card = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
 const card2 = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
  
 let pointsPlayer1 = 0
+let lives = 0
+
 
 play();
 function play(){
@@ -26,11 +30,11 @@ if (isNaN(numberCard)){
   // console.log(card2[random2])
   if (card[random] == 'Ace'){
     numberCard = 1
-  } else if (card2[random2] == 'Jack'){
+  } else if (card[random] == 'Jack'){
     numberCard = 11
-  } else if (card2[random2] == 'Queen'){
+  } else if (card[random] == 'Queen'){
     numberCard = 12
-  } else if (card2[random2] == 'King'){
+  } else if (card[random] == 'King'){
     numberCard = 13
   }
 } 
@@ -47,6 +51,7 @@ if (isNaN(numberCard2)){
   }
 } 
 // console.log(numberCard2)
+
 
 playerGuess();
 
@@ -67,34 +72,40 @@ function higherGuess(){
     console.log('correct')
     console.log('the card was: ' + card2[random2])
     pointsPlayer1 ++
-    ending();
-  } else {
+    
+  } else if (numberCard2 < numberCard){
     console.log('incorrect')
     console.log('the card was: ' + card2[random2])
-    ending();
+    
+    } else {
+    console.log('you got the same card you now lose a point')
+    console.log('the card was: ' + card2[random2])
+    pointsPlayer1 --
+    
   }
+  play();
 }
 function lowerGuess(){
   if (numberCard2 < numberCard){
     console.log('correct')
     console.log('the card was: ' + card2[random2])
     pointsPlayer1 ++
-    ending();
-  } else {
-    console.log('incorrect')
+    
+  } else if(numberCard2 > numberCard){
+     console.log('incorrect')
     console.log('the card was: ' + card2[random2])
-    ending();
-  }
-}
-
-function ending(){
-  let repeat = prompt('do you want to play again?')
-  if(repeat == 'yes'){
-    play();
+    
   } else {
-    console.log('thanks for playing')
-    console.log('points' + pointsPlayer1)
+    console.log('you got the same card you now lose a point')
+    console.log('the card was: ' + card2[random2])
+    pointsPlayer --
+    
   }
-}
-}
+  play();
+}}
+
+
+
+
+
 
