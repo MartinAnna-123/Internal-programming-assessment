@@ -12,14 +12,14 @@ let lives = 0
 
 play();
 function play(){
+// getting the program to choose a random value from the list of 'card'
 const random = Math.floor(Math.random() * card.length);
 const random2 = Math.floor(Math.random() * card2.length);
 
-
+// ask the user to guess higher or lower
 console.log('guess higher or lower than: ' + card[random])
 
 
-// ask the user to guess higher or lower
 
 // console.log('the card you drew is:' + card2[random2])
 let numberCard = parseInt (card[random])
@@ -54,7 +54,6 @@ if (isNaN(numberCard2)){
 
 
 playerGuess();
-
 function playerGuess(){
 guess = prompt('enter guess')
 if (guess == 'higher'){
@@ -76,6 +75,7 @@ function higherGuess(){
   } else if (numberCard2 < numberCard){
     console.log('incorrect')
     console.log('the card was: ' + card2[random2])
+    lives ++
     
     } else {
     console.log('you got the same card you now lose a point')
@@ -83,7 +83,10 @@ function higherGuess(){
     pointsPlayer1 --
     
   }
-  play();
+  if (lives < 3){
+  play();} else {
+    ending();
+  }
 }
 function lowerGuess(){
   if (numberCard2 < numberCard){
@@ -94,15 +97,30 @@ function lowerGuess(){
   } else if(numberCard2 > numberCard){
      console.log('incorrect')
     console.log('the card was: ' + card2[random2])
+    lives ++
     
   } else {
     console.log('you got the same card you now lose a point')
     console.log('the card was: ' + card2[random2])
-    pointsPlayer --
+    pointsPlayer1 --
     
   }
+  if (lives < 3){
   play();
-}}
+  } else {
+    ending();
+  }
+  }
+}
+  
+
+  function ending(){
+    console.log('you ran out of lives');
+    console.log('points: ' + pointsPlayer1);
+  }
+
+
+
 
 
 
