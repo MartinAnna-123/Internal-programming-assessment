@@ -181,8 +181,8 @@ if (isNaN(numberCard2)){
 
 playerGuess1();
 function playerGuess1(){
-guess1 = prompt('enter guess')
-if (gues1 == 'higher'){
+guess1 = prompt('player 1, enter guess')
+if (guess1 == 'higher'){
   higherGuess1();
   } else if (guess1 == 'lower') {
   lowerGuess1();
@@ -191,8 +191,6 @@ if (gues1 == 'higher'){
   playerGuess1();
 }
 }
-
-
 function higherGuess1(){
   if (numberCard2 > numberCard){
     console.log('correct')
@@ -210,9 +208,10 @@ function higherGuess1(){
     pointsPlayer1 --
     
   }
-  if (lives < 3){
-  play();} else {
-    ending();
+   if (lives < 3){
+  play();
+  } else if (lives >= 3) {
+    ending1();
   }
 }
 function lowerGuess1(){
@@ -236,15 +235,100 @@ function lowerGuess1(){
   play();
   } else if (lives >= 3) {
     ending1();
-  } else if (lives2 < 3){
+  }
+}
+
+let player2numberCard = parseInt (player2card[player2random])
+let player2numberCard2 = parseInt (player2card2[player2random2]) 
+// console.log(numberCard)
+
+if (isNaN(player2numberCard)){
+  // console.log(card2[random2])
+  if (player2card[player2random] == 'Ace'){
+    player2numberCard = 1
+  } else if (player2card[player2random] == 'Jack'){
+    player2numberCard = 11
+  } else if (player2card[player2random] == 'Queen'){
+    player2numberCard = 12
+  } else if (player2card[player2random] == 'King'){
+    player2numberCard = 13
+  }
+} 
+if (isNaN(player2numberCard2)){
+  // console.log(card2[random2])
+  if (player2card2[player2random2] == 'Ace'){
+    numberCard2 = 1
+  } else if (player2card2[player2random2] == 'Jack'){
+    player2numberCard2 = 11
+  } else if (player2card2[player2random2] == 'Queen'){
+    player2numberCard2 = 12
+  } else if (player2card2[player2random2] == 'King'){
+    player2numberCard2 = 13
+  }
+} 
+console.log(' player 2 guess higher or lower than: ' + player2card[player2random])
+
+playerGuess2();
+function playerGuess2(){
+  guess2 = prompt('player 2, enter guess')
+if (guess2 == 'higher'){
+  higherGuess2();
+  } else if (guess2 == 'lower') {
+  lowerGuess2();
+} else {
+  console.log('incorrect imput please try again with higher or lower.')
+  playerGuess2();
+}
+}
+
+function higherGuess2(){
+  if (player2numberCard2 > player2numberCard){
+    console.log('correct')
+    console.log('the card was: ' + player2card2[player2random2])
+    pointsPlayer2 ++
+    
+  } else if (player2numberCard2 < player2numberCard){
+    console.log('incorrect')
+    console.log('the card was: ' + player2card2[player2random2])
+    lives2 ++
+    
+    } else {
+    console.log('you got the same card you now lose a point')
+    console.log('the card was: ' + player2card2[player2random2])
+    pointsPlayer2 --
+    
+  }
+  if (lives2 < 3){
     play();
   } else if (lives2 >= 3){
     ending2();
   }
-  }
+}
+function lowerGuess2(){
+  if (player2numberCard2 < player2numberCard){
+    console.log('correct')
+    console.log('the card was: ' + player2card2[player2random2])
+    pointsPlayer2 ++
+    
+  } else if(player2numberCard2 > player2numberCard){
+     console.log('incorrect')
+    console.log('the card was: ' + player2card2[player2random2])
+    lives2 ++
+    
+  } else {
+    console.log('you got the same card you now lose a point')
+    console.log('the card was: ' + player2card2[player2random2])
+    pointsPlayer2 --
+    
+  }  if (lives2 < 3){
+    play();
+  } else if (lives2 >= 3){
+    ending2();
+  } }
+
+  
 }
   
-
   function ending1(){
     console.log('player 1, you ran out of lives');
     console.log('points: ' + pointsPlayer1);
