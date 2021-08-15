@@ -2,6 +2,8 @@
 console.log('Welcome to the high, low card game')
 console.log('This is a two player game. You both have three lives to get as many points as possible, and the player with the most points at the end wins')
 console.log('Every answer you get correct you get a point')
+player1Name = prompt('player 1 please enter your name')
+player2Name = prompt(' Player 2 please enter your name')
 
 
 
@@ -26,7 +28,7 @@ const random2 = Math.floor(Math.random() * card2.length);
 
 
 // ask the user to guess higher or lower
-console.log(' player 1 guess higher or lower than: ' + card[random])
+console.log( player1Name + ' guess higher or lower than: ' + card[random])
 
 
 
@@ -64,7 +66,7 @@ if (isNaN(numberCard2)){
 
 playerGuess1();
 function playerGuess1(){
-guess1 = prompt('player 1, enter guess')
+guess1 = prompt(player1Name + ', enter guess')
 if (guess1 == 'higher'){
   higherGuess1();
   } else if (guess1 == 'lower') {
@@ -157,11 +159,11 @@ if (isNaN(player2numberCard2)){
     player2numberCard2 = 13
   }
 } 
-console.log(' player 2 guess higher or lower than: ' + player2card[player2random])
+console.log( player2Name + ' guess higher or lower than: ' + player2card[player2random])
 
 playerGuess2();
 function playerGuess2(){
-  guess2 = prompt('player 2, enter guess')
+  guess2 = prompt(player2Name + ', enter guess')
 if (guess2 == 'higher'){
   higherGuess2();
   } else if (guess2 == 'lower') {
@@ -221,18 +223,18 @@ function lowerGuess2(){
 }
   
   function ending1(){
-    console.log('player 1, you ran out of lives');
+    console.log(player1Name + ', you ran out of lives');
     console.log('it is now player 2s turn')
     play2();
   }
   function ending2(){
-    console.log('player 2, you ran out of lives');
+    console.log(player2Name + ', you ran out of lives');
     console.log('points: ' + pointsPlayer2);
     if(pointsPlayer1 > pointsPlayer2){
-      console.log('player 1 wins!, they had ' + pointsPlayer1 + ' points and player 2 had ' + pointsPlayer2 + ' points')
+      console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and player 2 had ' + pointsPlayer2 + ' points')
     
     } else if (pointsPlayer1 < pointsPlayer2){
-      console.log('player 2 wins!, they had ' + pointsPlayer2 + ' and player 1 had ' + pointsPlayer1 + ' points')
+      console.log(player2Name + ' wins!, they had ' + pointsPlayer2 + ' and player 1 had ' + pointsPlayer1 + ' points')
     }
   }
 
