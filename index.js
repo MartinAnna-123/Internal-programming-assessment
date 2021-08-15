@@ -93,9 +93,9 @@ function higherGuess1(){
     pointsPlayer1 --
     
   }
-   if (lives < 3){
+   if (lives < 1){
   play1();
-  } else if (lives >= 3) {
+  } else if (lives >= 1) {
     ending1();
   }
 }
@@ -116,9 +116,9 @@ function lowerGuess1(){
     pointsPlayer1 --
     
   }
-  if (lives < 3){
+  if (lives < 1){
   play1();
-  } else if (lives >= 3) {
+  } else if (lives >= 1) {
     ending1();
   }
 }
@@ -191,9 +191,9 @@ function higherGuess2(){
     pointsPlayer2 --
     
   }
-  if (lives2 < 3){
+  if (lives2 < 1){
     play2();
-  } else if (lives2 >= 3){
+  } else if (lives2 >= 1){
     ending2();
   }
 }
@@ -213,9 +213,9 @@ function lowerGuess2(){
     console.log('the card was: ' + player2card2[player2random2])
     pointsPlayer2 --
     
-  }  if (lives2 < 3){
+  }  if (lives2 < 1){
     play2();
-  } else if (lives2 >= 3){
+  } else if (lives2 >= 1){
     ending2();
   } }
 
@@ -224,7 +224,7 @@ function lowerGuess2(){
   
   function ending1(){
     console.log(player1Name + ', you ran out of lives');
-    console.log('it is now player 2s turn')
+    console.log('it is now ' + player2Name + 's turn')
     play2();
   }
   function ending2(){
