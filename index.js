@@ -2,8 +2,8 @@
 console.log('Welcome to the high, low card game')
 console.log('This is a two player game. You both have three lives to get as many points as possible, and the player with the most points at the end wins')
 console.log('Every answer you get correct you get a point')
-player1Name = prompt('player 1 please enter your name')
-player2Name = prompt(' Player 2 please enter your name')
+player1Name = prompt('Player 1 please enter your name')
+player2Name = prompt('Player 2 please enter your name')
 
 
 
