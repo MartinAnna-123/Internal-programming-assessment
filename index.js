@@ -1,7 +1,7 @@
 
 console.log('Welcome to the high, low card game')
-console.log('This is a two player game. You both have three lives to get as many points as possible, and the player with the most points at the end wins')
-console.log('Every answer you get correct you get a point')
+console.log('This is a two player game. You both have 1 life to get as many points as possible. You can choose to play more rounds when you are both out of lives, and the player with the most points at the end wins')
+console.log('Every answer you get correct you get a point but if you draw the same card you will lose a point')
 player1Name = prompt('Player 1 please enter your name')
 player2Name = prompt('Player 2 please enter your name')
 
@@ -230,12 +230,20 @@ function lowerGuess2(){
   function ending2(){
     console.log(player2Name + ', you ran out of lives');
     console.log('points: ' + pointsPlayer2);
+    playAgain = prompt('do you want to play another round?')
+    if(playAgain == 'yes' || 'y'){
+      let lives = 0
+      let lives2 = 0
+      play();
+    } else {
     if(pointsPlayer1 > pointsPlayer2){
       console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and player 2 had ' + pointsPlayer2 + ' points')
     
     } else if (pointsPlayer1 < pointsPlayer2){
       console.log(player2Name + ' wins!, they had ' + pointsPlayer2 + ' and player 1 had ' + pointsPlayer1 + ' points')
     }
+    }
+    
   }
 
 
