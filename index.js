@@ -232,10 +232,13 @@ function lowerGuess2(){
     console.log('points: ' + pointsPlayer2);
     playAgain = prompt('do you want to play another round?')
     if(playAgain == 'yes' || 'y'){
-      let lives = 0
-      let lives2 = 0
-      play();
-    } else {
+      let lives = 0;
+      let lives2 = 0;
+      play1();
+    } else if(playAgain == 'no' || 'n'){
+      endOfRounds();}
+
+    function endOfRounds(){
     if(pointsPlayer1 > pointsPlayer2){
       console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and player 2 had ' + pointsPlayer2 + ' points')
     
