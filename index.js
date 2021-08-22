@@ -218,8 +218,6 @@ function lowerGuess2(){
   } else if (lives2 >= 1){
     ending2();
   } }
-
-  
 }
   
   function ending1(){
@@ -227,27 +225,33 @@ function lowerGuess2(){
     console.log('it is now ' + player2Name + 's turn')
     play2();
   }
-  function ending2(){
+  function ending2(playAgain){
     console.log(player2Name + ', you ran out of lives');
     console.log('points: ' + pointsPlayer2);
-    playAgain = prompt('do you want to play another round?')
-    if(playAgain == 'yes' || 'y'){
+    playAgain = prompt('do you want to play another round?');
+    if(playAgain == 'yes' || playAgain == 'y'){
       let lives = 0;
       let lives2 = 0;
       play1();
-    } else if(playAgain == 'no' || 'n'){
-      endOfRounds();}
+    } else if(playAgain == 'no' || playAgain == 'n'){
+      endOfRounds();
+      }}
 
     function endOfRounds(){
-    if(pointsPlayer1 > pointsPlayer2){
+     if(pointsPlayer1 > pointsPlayer2){
       console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and player 2 had ' + pointsPlayer2 + ' points')
     
-    } else if (pointsPlayer1 < pointsPlayer2){
+     }else if (pointsPlayer1 < pointsPlayer2){
       console.log(player2Name + ' wins!, they had ' + pointsPlayer2 + ' and player 1 had ' + pointsPlayer1 + ' points')
-    }
+    } else {
+      console.log('it is a draw. no-one wins')
     }
     
-  }
+     console.log('the end')
+    }
+    
+  
+    
 
 
 
