@@ -2,6 +2,24 @@
 console.log('Welcome to the high, low card game')
 console.log('This is a two player game. You both have 1 life to get as many points as possible. You can choose to play more rounds when you are both out of lives, and the player with the most points at the end wins')
 console.log('Every answer you get correct you get a point but if you draw the same card you will lose a point')
+
+roundLoop = 0
+do{
+rounds = prompt('how many rounds do you want to play?');
+
+if (isNaN(rounds)){
+  console.log('that is not a number please enter a whole integer')
+} else if (rounds < 1){
+  math.abs(rounds)
+} else {
+  roundLoop ++
+}
+} while (roundLoop < 1)
+
+
+
+
+
 player1Name = prompt('Player 1 please enter your name')
 player2Name = prompt('Player 2 please enter your name')
 
@@ -19,7 +37,7 @@ let pointsPlayer2 = 0
 let lives = 0
 let lives2 = 0
 
-
+do{
 play1();
 function play1(){
 // getting the program to choose a random value from the list of 'card'
