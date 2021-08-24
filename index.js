@@ -36,6 +36,7 @@ let pointsPlayer1 = 0
 let pointsPlayer2 = 0
 let lives = 0
 let lives2 = 0
+let round = 0
 
 do{
 play1();
@@ -83,6 +84,7 @@ if (isNaN(numberCard2)){
 
 
 playerGuess1();
+
 function playerGuess1(){
 guess1 = prompt(player1Name + ', enter guess')
 if (guess1 == 'higher'){
@@ -114,7 +116,7 @@ function higherGuess1(){
    if (lives < 1){
   play1();
   } else if (lives >= 1) {
-    ending1();
+    play2();
   }
 }
 function lowerGuess1(){
@@ -137,7 +139,7 @@ function lowerGuess1(){
   if (lives < 1){
   play1();
   } else if (lives >= 1) {
-    ending1();
+    play2();
   }
 }
 }
@@ -145,6 +147,9 @@ function lowerGuess1(){
 
 play2();
 function play2(){
+
+console.log(player1Name + ', you ran out of lives');
+    console.log('it is now ' + player2Name + 's turn')
 
 const player2random = Math.floor(Math.random() * player2card.length);
 const player2random2 = Math.floor(Math.random() * player2card2.length);
@@ -232,28 +237,32 @@ function lowerGuess2(){
     pointsPlayer2 --
     
   }  if (lives2 < 1){
-    play2();
+    round ++
+    play1();
   } else if (lives2 >= 1){
-    ending2();
+    round ++
+  endOfRounds();
+
   } }
-}
+  
+}} while (round < rounds)
   
   function ending1(){
     console.log(player1Name + ', you ran out of lives');
     console.log('it is now ' + player2Name + 's turn')
     play2();
   }
-  function ending2(playAgain){
-    console.log(player2Name + ', you ran out of lives');
-    console.log('points: ' + pointsPlayer2);
-    playAgain = prompt('do you want to play another round?');
-    if(playAgain == 'yes' || playAgain == 'y'){
-      let lives = 0;
-      let lives2 = 0;
-      play1();
-    } else if(playAgain == 'no' || playAgain == 'n'){
-      endOfRounds();
-      }}
+  // function ending2(playAgain){
+  //   console.log(player2Name + ', you ran out of lives');
+  //   console.log('points: ' + pointsPlayer2);
+  //   playAgain = prompt('do you want to play another round?');
+  //   if(playAgain == 'yes' || playAgain == 'y'){
+  //     let lives = 0;
+  //     let lives2 = 0;
+  //     play1();
+  //   } else if(playAgain == 'no' || playAgain == 'n'){
+  //     endOfRounds();
+  //     }}
 
     function endOfRounds(){
      if(pointsPlayer1 > pointsPlayer2){
