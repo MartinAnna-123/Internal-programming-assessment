@@ -95,6 +95,7 @@ if (guess1 == 'higher'){
   playerGuess1();
 }
 }
+// this function processes the higher answer and decides if it was right or wrong in relation to the second drawn card
 function higherGuess1(){
   if (numberCard2 > numberCard){
     console.log('correct')
@@ -114,6 +115,7 @@ function higherGuess1(){
   }
    
 }
+// this function processes the lower answer and decides if it was right or wrong in relation to the second drawn card
 function lowerGuess1(){
   if (numberCard2 < numberCard){
     console.log('correct')
@@ -266,13 +268,16 @@ function lowerGuess2(){
     console.log('it is a draw. no-one wins')
   }
     console.log('the end')
-     return;
+    exitFunction();
   }
+  return;
 }
   return;
 }
   
-
+function exitFunction(){
+      console.log('the end')
+}
 
 
 
