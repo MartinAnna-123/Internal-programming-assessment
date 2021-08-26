@@ -15,12 +15,12 @@ const player2card2 = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack
 roundLoop = 0
 do{
 rounds = prompt('how many rounds do you want to play?');
-var b = parseInt(rounds)
+var decimal = parseInt(rounds)
 if (isNaN(rounds)){
   console.log('that is not a number please enter a whole integer')
 } else if (rounds < 1){
   console.log('please enter a number bigger than 0')
-} else if (rounds !== b){
+} else if (decimal !== Math.floor(rounds)){
   console.log('this is a decimal number, please enter an integer')
 } else {
   roundLoop ++
@@ -38,8 +38,9 @@ let lives = 0
 let lives2 = 0
 let round = 0
 
+
 // this is the start of the game. it is functions  in a loop and it will break out of the loop when it has completed the amount of rounds the player entered in the beginning.
-do{
+
 play1();
 function play1(){
 
@@ -140,7 +141,9 @@ function lowerGuess1(){
 }
 // if the player got it wrong they will run out of lives so it will be the next players turn. This 'if' statement determines whether they guess agin or if its the next players turn.
 if (lives < 1){
+  lives = 0
   play1();
+  
   } else if (lives >= 1) {
     play2();
   }
@@ -243,20 +246,18 @@ function lowerGuess2(){
   } 
   
   if (lives2 < 1){
+    lives2 = 0
     play2();
   } else if (lives2 >= 1){
     round ++
-    }else if (round < rounds){
-      play();
-      
-    } else {
-      break;
-    }
+   endOfRounds();
   }
-  
-}
 
-if (pointsPlayer1 > pointsPlayer2){
+  function endOfRounds(){
+  if (round < rounds){
+      play1();
+  } else {
+      if (pointsPlayer1 > pointsPlayer2){
     console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and player 2 had ' + pointsPlayer2 + ' points')
     
   }else if (pointsPlayer1 < pointsPlayer2){
@@ -264,9 +265,19 @@ if (pointsPlayer1 > pointsPlayer2){
   } else {
     console.log('it is a draw. no-one wins')
   }
-    
-     console.log('the end')
- 
+    console.log('the end')
+     return;
+  }
+}
+  return;
+}
+  
+
+
+
+
+
+
  
   // function ending1(){
   //   console.log(player1Name + ', you ran out of lives');
