@@ -1,7 +1,9 @@
 // this is the explanation to the players about how the game wos and what to do 
 console.log('Welcome to the high, low card game')
-console.log('This is a two player game. You both have 1 life to get as many points as possible. The player with the most points at the end wins')
-console.log('Every answer you get correct you get a point but if you draw the same card you will lose a point')
+console.log('This is a two player game. You both have 1 life to get as many points as possible.')
+console.log('The player with the most points at the end wins!')
+console.log('Every answer you get correct you win a point.')
+console.log('However, if you draw the same card you will lose a point.')
 
 // this is the list of variables that the code will randomly pick out of when the player plays the game.
 const card = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
@@ -47,7 +49,9 @@ function play1() {
   // getting the program to choose a random value from the list of const 'card'
   const random = Math.floor(Math.random() * card.length);
   const random2 = Math.floor(Math.random() * card2.length);
-
+  
+  // this is spacing out the text so the program is easier to read
+  console.log('---------------------')
 
   // asking the user to guess higher or lower than the randomly picked variable
   console.log(player1Name + ' guess higher or lower than: ' + card[random])
@@ -145,9 +149,9 @@ function play1() {
 }
 
 
-  // the second function with player two. Almost identical to play2(); 
-  play2();
-  function play2() {
+  // the second function with player two. Almost identical to play1(); 
+ play2();
+ function play2() {
 
     // getting the program to choose a random value from the list of const 'card2'
     const player2random = Math.floor(Math.random() * player2card.length);
@@ -181,6 +185,9 @@ function play1() {
         player2numberCard2 = 13
       }
     }
+    
+    // this is spacing out the text so the program is easier to read
+    console.log('---------------------')
 
     // asking the player to pick higher or lower than the randonly selected card from const 'card2'
     console.log(player2Name + ' guess higher or lower than: ' + player2card[player2random])
@@ -216,12 +223,9 @@ function play1() {
         pointsPlayer2--
 
       }
-      // if (lives2 < 1){
-      //   play2();
-      // } else if (lives2 >= 1){
-      //   ending2();
-      // }
+      
     }
+    
     function lowerGuess2() {
       if (player2numberCard2 < player2numberCard) {
         console.log('correct')
@@ -253,13 +257,16 @@ function play1() {
       if (round < rounds) {
         lives = 0
         lives2 = 0
+         console.log(player2Name + ', you ran out of lives');
+         console.log('it is now ' + player1Name + 's turn');
         play1();
       } else {
+        console.log('----------------')
         if (pointsPlayer1 > pointsPlayer2) {
-          console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and player 2 had ' + pointsPlayer2 + ' points')
+          console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and ' + player2Name + ' had ' + pointsPlayer2 + ' points')
 
         } else if (pointsPlayer1 < pointsPlayer2) {
-          console.log(player2Name + ' wins!, they had ' + pointsPlayer2 + ' points and player 1 had ' + pointsPlayer1 + ' points')
+          console.log(player2Name + ' wins!, they had ' + pointsPlayer2 + ' points and ' + player1Name + ' had ' + pointsPlayer1 + ' points')
         } else {
           console.log('it is a draw. no-one wins')
         }
@@ -271,9 +278,9 @@ function play1() {
   }
 
 
-function exitFunction() {
-  console.log('the end')
-}
+    function exitFunction() {
+     console.log('the end')
+    }
 
 
 
