@@ -105,17 +105,21 @@ function play1() {
       console.log('correct')
       console.log('the card was: ' + card2[random2])
       pointsPlayer1++
+      if (lives < 1) {
+      play1();
+    }
 
     } else if (numberCard2 < numberCard) {
       console.log('incorrect')
       console.log('the card was: ' + card2[random2])
       lives++
 
-    } else {
+    } else if(numberCard2 == numberCard) {
       console.log('you got the same card you now lose a point')
       console.log('the card was: ' + card2[random2])
       pointsPlayer1--
-
+    } else {
+      console.log('error')
     }
 
   }
@@ -125,22 +129,27 @@ function play1() {
       console.log('correct')
       console.log('the card was: ' + card2[random2])
       pointsPlayer1++
+      if (lives < 1) {
+      play1();
+    }
 
     } else if (numberCard2 > numberCard) {
       console.log('incorrect')
       console.log('the card was: ' + card2[random2])
       lives++
 
-    } else {
+    } else if (numbdrCard2 == numberCard){
       console.log('you got the same card you now lose a point')
       console.log('the card was: ' + card2[random2])
       pointsPlayer1--
-
+    } else {
+      console.log('error')
     }
     // if the player got it wrong they will run out of lives so it will be the next players turn. This 'if' statement determines whether they guess agin or if its the next players turn.
-    if (lives < 1) {
-      play1();
-    } else if (lives >= 1) {
+    // if (lives < 1) {
+    //   play1();
+    // } else 
+    if (lives >= 1) {
       console.log(player1Name + ', you ran out of lives');
       console.log('it is now ' + player2Name + 's turn');
       play2();
@@ -217,11 +226,13 @@ function play1() {
         console.log('the card was: ' + player2card2[player2random2])
         lives2++
 
-      } else {
+      } else if (player2numberCard2 == player2numberCard) {
         console.log('you got the same card you now lose a point')
         console.log('the card was: ' + player2card2[player2random2])
         pointsPlayer2--
 
+      } else {
+        console.log('error')
       }
       
     }
@@ -237,11 +248,12 @@ function play1() {
         console.log('the card was: ' + player2card2[player2random2])
         lives2++
 
-      } else {
+      } else if(player2numberCard2 == player2numberCard){
         console.log('you got the same card you now lose a point')
         console.log('the card was: ' + player2card2[player2random2])
         pointsPlayer2--
-
+      } else {
+        console.log('error')
       }
     }
 
@@ -264,23 +276,31 @@ function play1() {
         console.log('----------------')
         if (pointsPlayer1 > pointsPlayer2) {
           console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and ' + player2Name + ' had ' + pointsPlayer2 + ' points')
+          // exitFunction();
+          return
 
         } else if (pointsPlayer1 < pointsPlayer2) {
           console.log(player2Name + ' wins!, they had ' + pointsPlayer2 + ' points and ' + player1Name + ' had ' + pointsPlayer1 + ' points')
+          // exitFunction();
+          return
         } else {
           console.log('it is a draw. no-one wins')
+          // exitFunction();
+          return
+          
         }
-        exitFunction();
+       return
       }
-      return;
+      return
     }
-    return;
+    return
+    
   }
 
-
-    function exitFunction() {
-     console.log('the end')
-    }
+// function exitFunction() {
+//   console.log('the end')
+// }
+console.log('the end')
 
 
 
