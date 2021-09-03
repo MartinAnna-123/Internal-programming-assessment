@@ -1,3 +1,4 @@
+// high low card game by Anna Martin. 03/09/21
 // this is the explanation to the players about how the game wos and what to do 
 console.log('Welcome to the high, low card game')
 console.log('This is a two player game. You both have 1 life to get as many points as possible.')
@@ -204,7 +205,7 @@ function play1() {
     // asking the player to pick higher or lower than the randonly selected card from const 'card2'
     console.log(player2Name + ' guess higher or lower than: ' + player2card[player2random])
 
-    // this function processes the guess that the player entered and then refers it to the correct function depending on whether they picked higher or lower.
+    // this function processes the guess that. the player entered and then refers it to the correct function depending on whether they picked higher or lower.
     playerGuess2();
     function playerGuess2() {
       guess2 = prompt(player2Name + ', enter guess')
@@ -217,8 +218,7 @@ function play1() {
         playerGuess2();
       }
     }
-    
-    // this function processes the higher answer and decides if it was right or wrong in relation to the second drawn card
+
     function higherGuess2() {
       if (player2numberCard2 > player2numberCard) {
         console.log('correct')
@@ -240,7 +240,7 @@ function play1() {
       }
       
     }
-    // this function processes the lower answer and decides if it was right or wrong in relation to the second drawn card
+    
     function lowerGuess2() {
       if (player2numberCard2 < player2numberCard) {
         console.log('correct')
@@ -268,8 +268,7 @@ function play1() {
       round++
       endOfRounds();
     }
-    
-    // when the player has played all the rounds that they entered at the start they will be taken to this function and it will process thier points to see who wins.
+
     function endOfRounds() {
       if (round < rounds) {
         lives = 0
@@ -281,16 +280,16 @@ function play1() {
         console.log('----------------')
         if (pointsPlayer1 > pointsPlayer2) {
           console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and ' + player2Name + ' had ' + pointsPlayer2 + ' points');
-          
+          // exitFunction();
 return;
 
         } else if (pointsPlayer1 < pointsPlayer2) {
           console.log(player2Name + ' wins!, they had ' + pointsPlayer2 + ' points and ' + player1Name + ' had ' + pointsPlayer1 + ' points');
-          
+          // exitFunction();
 return;
         } else {
           console.log('it is a draw. no-one wins');
-          
+          // exitFunction();
 return;
           
         }
@@ -306,8 +305,13 @@ return
   }
 
 
-
+// function exitFunction() {
+//   console.log('the end')
+//   return
+// }
 console.log('the end')
+
+
 
 
 
