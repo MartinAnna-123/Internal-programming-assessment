@@ -278,21 +278,21 @@ function play1() {
       } else if(round >= rounds) {
         console.log('----------------')
         if (pointsPlayer1 > pointsPlayer2) {
-          console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and ' + player2Name + ' had ' + pointsPlayer2 + ' points')
+          console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and ' + player2Name + ' had ' + pointsPlayer2 + ' points');
           // exitFunction();
-return
+return;
 
         } else if (pointsPlayer1 < pointsPlayer2) {
-          console.log(player2Name + ' wins!, they had ' + pointsPlayer2 + ' points and ' + player1Name + ' had ' + pointsPlayer1 + ' points')
+          console.log(player2Name + ' wins!, they had ' + pointsPlayer2 + ' points and ' + player1Name + ' had ' + pointsPlayer1 + ' points');
           // exitFunction();
-return
+return;
         } else {
-          console.log('it is a draw. no-one wins')
+          console.log('it is a draw. no-one wins');
           // exitFunction();
-return
+return;
           
         }
- return;
+return;
        
       
       }
