@@ -17,13 +17,14 @@ const player2card2 = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack
 roundLoop = 0
 do {
   rounds = prompt('how many rounds do you want to play?');
-  var decimal = parseInt(rounds)
   if (isNaN(rounds)) {
-    console.log('that is not a number please enter a whole integer')
+    console.log('that is not a number please enter an integer')
   } else if (rounds < 1) {
     console.log('please enter a number bigger than 0')
-  } else if (decimal !== Math.floor(rounds)) {
-    console.log('this is a decimal number, please enter an integer')
+  } else if (rounds != Math.floor(rounds)) {
+    console.log('this is a decimal number, please enter a number')
+  } else if (rounds > 10){
+    console.log('enter a number that is 10, or smaller because 10 is the maximum rounds')
   } else {
     roundLoop++
   }
