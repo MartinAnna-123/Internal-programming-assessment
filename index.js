@@ -22,7 +22,7 @@ do {
   } else if (rounds < 1) {
     console.log('please enter a number bigger than 0')
   } else if (rounds != Math.floor(rounds)) {
-    console.log('this is a decimal number, please enter a number')
+    console.log('this is a decimal number, please enter a whole number')
   } else if (rounds > 10){
     console.log('enter a number that is 10, or smaller because 10 is the maximum rounds')
   } else {
@@ -119,6 +119,7 @@ function play1() {
       console.log('you got the same card you now lose a point')
       console.log('the card was: ' + card2[random2])
       pointsPlayer1--
+      play1();
     } else {
       console.log('error')
     }
@@ -139,10 +140,11 @@ function play1() {
       console.log('the card was: ' + card2[random2])
       lives++
 
-    } else if (numbdrCard2 == numberCard){
+    } else if (numberCard2 == numberCard){
       console.log('you got the same card you now lose a point')
       console.log('the card was: ' + card2[random2])
       pointsPlayer1--
+      play1();
     } else {
       console.log('error')
     }
@@ -273,33 +275,38 @@ function play1() {
          console.log(player2Name + ', you ran out of lives');
          console.log('it is now ' + player1Name + 's turn');
         play1();
-      } else {
+      } else if(round >= rounds) {
         console.log('----------------')
         if (pointsPlayer1 > pointsPlayer2) {
           console.log(player1Name + ' wins!, they had ' + pointsPlayer1 + ' points and ' + player2Name + ' had ' + pointsPlayer2 + ' points')
           // exitFunction();
-          return
+return
 
         } else if (pointsPlayer1 < pointsPlayer2) {
           console.log(player2Name + ' wins!, they had ' + pointsPlayer2 + ' points and ' + player1Name + ' had ' + pointsPlayer1 + ' points')
           // exitFunction();
-          return
+return
         } else {
           console.log('it is a draw. no-one wins')
           // exitFunction();
-          return
+return
           
         }
-       return
+ return;
+       
+      
       }
-      return
+return;
+      
     }
-    return
+return
     
   }
 
+
 // function exitFunction() {
 //   console.log('the end')
+//   return
 // }
 console.log('the end')
 
